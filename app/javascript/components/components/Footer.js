@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 
-export default class Footer extends Component {
+ class Footer extends Component {
   render() {
-    return (
-      <h3>Footer</h3>
-    )
+    return <h4 className="footer">&copy; Brought to you by GeeShep</h4>
+    
   }
 }
+
+
+export default Footer;
