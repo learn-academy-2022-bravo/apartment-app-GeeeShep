@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Nav, NavItem } from 'reactstrap'
+import { NavLink} from 'react-router-dom'
 
 class Header extends Component {
   render() {
@@ -14,7 +15,7 @@ class Header extends Component {
     console.log("current_user:", current_user)
     return (
       <>
-        <h1>Apartment App</h1>
+       
         <Nav>
           {logged_in &&
             <NavItem>
@@ -33,12 +34,12 @@ class Header extends Component {
           }
           {!logged_in &&
             <NavItem>
-              <a href="/apartmentindex" className="nav-link">All Apartments</a>
+              <NavLink to="/apartmentindex" className="nav-link">All Apartments</NavLink>
             </NavItem>
           }
           {!logged_in &&
             <NavItem>
-              <a href="/" className="nav-link">Home</a>
+              <NavLink to="/" className="nav-link">Home</NavLink>
             </NavItem>
           }
           
@@ -49,58 +50,3 @@ class Header extends Component {
 }
 export default Header
 
-{/* <div>
-  <Navbar
-    color="light"
-    expand="md"
-    light
-  >
-    <NavbarBrand href="/">
-      reactstrap
-    </NavbarBrand>
-    <NavbarToggler onClick={function noRefCheck(){}} />
-    <Collapse navbar>
-      <Nav
-        className="me-auto"
-        navbar
-      >
-        <NavItem>
-          <NavLink href="/components/">
-            Components
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="https://github.com/reactstrap/reactstrap">
-            GitHub
-          </NavLink>
-        </NavItem>
-        <UncontrolledDropdown
-          inNavbar
-          nav
-        >
-          <DropdownToggle
-            caret
-            nav
-          >
-            Options
-          </DropdownToggle>
-          <DropdownMenu right>
-            <DropdownItem>
-              Option 1
-            </DropdownItem>
-            <DropdownItem>
-              Option 2
-            </DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>
-              Reset
-            </DropdownItem>
-          </DropdownMenu>
-        </UncontrolledDropdown>
-      </Nav>
-      <NavbarText>
-        Simple Text
-      </NavbarText>
-    </Collapse>
-  </Navbar>
-</div> */}
